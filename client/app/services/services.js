@@ -17,7 +17,13 @@ angular.module('shortly.services', [])
       method: 'POST',
       url: '/api/links',
       data: newLink
-    });
+    })
+      .then(function(resp) {
+        console.log(resp.data);
+        
+      }, function(err) {
+        console.log(err);
+      });
   };
 
   return {

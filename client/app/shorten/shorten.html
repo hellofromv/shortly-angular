@@ -4,19 +4,25 @@
   <ul>
     <li><a href='#/links' class='index'>Links</a></li>
     <li><a href='#/shorten' class='create'>Shorten</a></li>
+    <li><a href='#/signin' ng-click='logout()'>Log Out</a></li>
   </ul>
     <!-- <a href='/logout' class='logout'>Logout</a> -->
+
   </div>
   <div id='container'></div>
 
-  <form>
-      <input class='text' type='text' name='url'>
-      <input type='submit' value='Shorten'>
+  <form ng-init="focus=false;blur=false;active=false">
+      <input class='text' required ng-model='url' >
+      <input type='submit' value='Shorten' ng-click=(addLink(url))>
   </form>
   <!-- <img class='spinner' src='/spiffygif_46x46.gif'> -->
   <!-- <div class='message'></div> -->
 
-
+  <div>
+  <!-- refactor this to show 'invalid URL' or 'URL required when emply -->
+    <p ng-model='message'> {{ message }} </p>
+    {{ url }}
+  </div>
 </div>
 
 

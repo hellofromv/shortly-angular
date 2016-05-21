@@ -31,6 +31,7 @@ gulp.task('serve', function () {
   nodemon({
     script: paths.server,
     ignore: 'node_modules/**/*.js'
+    //ignore: ['node_modules/**/*.js', 'client/**/*.*']
   });
 });
 
