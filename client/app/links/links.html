@@ -1,3 +1,23 @@
-<div id='container'>
+<div id='container' ng-controller='LinksController'>
   <!-- Your html here -->
+  <div class='navigation'>
+    <ul>
+      <li><a href='#/links' class='index'>Links</a></li>
+      <li><a href='#/shorten' class='create'>Shorten</a></li>
+    </ul>
+  </div>
+  <ul>
+    <li ng-repeat="link in data.links track by $index">
+      {{ link }}
+              <!-- <div class='info'>
+                <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
+                <div class='title'>{{title}}</div>
+                <div class='original'>{{url}}</div>
+                <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a>
+              </div> -->
+    </li>
+  </ul>
+
+
+
 </div>
